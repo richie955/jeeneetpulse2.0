@@ -2,244 +2,256 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
-const AboutPage = () => {
+const metrics = [
+  { value: "JEE & NEET", label: "Dedicated focus tracks" },
+  { value: "06+ Courses", label: "Structured video syllabus" },
+  { value: "50k+ Sessions", label: "Daily active practice loops" },
+];
+
+const tenets = [
+  {
+    num: "01",
+    title: "Focused learning paths",
+    description: "Every concept is mapped chronologically to JEE & NEET blueprints. Mastery is built layer by layer, starting from foundation lectures up to advanced problem-solving sessions.",
+    points: ["Chronological video sequences", "Blueprint-aligned chapters", "Step-by-step concept testing"],
+  },
+  {
+    num: "02",
+    title: "Smart revision layers",
+    description: "Prep isn't just about reading; it's about quick retrieval. We organize equation summaries, formula sheets, and flagged questions directly on the dashboard for instant recall.",
+    points: ["Interactive formula decks", "Flagged problem lists", "Chapter summary revision notes"],
+  },
+  {
+    num: "03",
+    title: "Accurate progress loop",
+    description: "No gamified score boards or stress-inducing notifications. Just direct, clean metrics that show subject accuracy, timing trends, and targeted next actions.",
+    points: ["Pace and accuracy tracking", "Weak concept identification", "No vanity rank notifications"],
+  },
+];
+
+export default function AboutPage() {
   return (
-    <div className="bg-gray-100 min-h-screen">
-      {/* Header Section */}
-      <div className="bg-teal-900 text-white py-20 text-center px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-4 font-inter">
-          © JEENEETPULSE
-        </h1>
-        <p className="text-md sm:text-lg font-medium max-w-3xl px-3 mx-auto">
-          The ultimate platform for aspiring students preparing for JEE and
-          NEET. Test your skills, practice questions, and watch expert-led
-          classes.
-        </p>
-      </div>
-
-      <section className="py-16 bg-white px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid  gap-8">
-            <div className="">
-              <h3 className="text-3xl font-bold text-teal-900 mb-4 font-instSansB">
-                Who We Are
-              </h3>
-              <p className="text-gray-900">
-                Jeeneetpulse is a leading platform dedicated to helping students
-                excel in competitive exams like JEE and NEET. Our mission is to
-                provide high-quality resources, expert guidance, and an
-                intuitive learning experience and some other stuff. Jeeneetpulse
-                is a leading platform dedicated to helping students excel in
-                competitive exams like JEE and NEET. Our mission is to provide
-                high-quality resources, expert guidance, and an intuitive
-                learning experience and some other stuff.
-              </p>
-            </div>
-
+    <main className="bg-white font-inter text-slate-950">
+      {/* Editorial Hero */}
+      <section className="relative px-5 pb-16 pt-20 sm:px-8 sm:pb-24 lg:pt-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr] lg:items-start lg:gap-20">
+            {/* Left Column: Bold Statement */}
             <div>
-              <h3 className="text-3xl font-bold  text-teal-900 mb-4 font-instSansB">
-                Our Vision
-              </h3>
-              <p className="text-gray-900 ">
-                Our vision is to transform how students prepare for their exams
-                by integrating technology, personalized learning, and expert
-                resources. We aspire to be the one-stop solution for all
-                academic needs, fostering success and confidence in our
-                learners. Jeeneetpulse is a leading platform dedicated to
-                helping students excel in competitive exams like JEE and NEET.
-                Our mission is to provide high-quality resources, expert
-                guidance, and an intuitive learning experience and some other
-                stuff.
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-700 font-bold">
+                [ EST. 2026 / ACADEMIC MISSION ]
+              </span>
+              <h1 className="mt-6 text-[2.75rem] font-bold leading-[1.05] tracking-tight text-slate-950 sm:text-[4rem] font-jakarta">
+                A quiet workspace for deep academic progress.
+              </h1>
+              <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-[1.1rem] sm:leading-8">
+                JeeNeetPulse brings structured video lessons, precision practice sets, and adaptive progress tracking into a single, high-fidelity environment built specifically for JEE & NEET candidates.
               </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/courses"
+                  className="inline-flex min-h-12 items-center justify-center rounded-lg bg-emerald-500 px-6 text-sm font-semibold text-white transition hover:bg-emerald-600"
+                >
+                  Explore curriculum
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                >
+                  Talk to academic lead
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Column: Monospace Metrics list */}
+            <div className="border-t border-slate-200 lg:border-t-0 lg:border-l lg:pl-12 lg:pt-4">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-[#063f39] font-bold block mb-6">
+                [ ECOSYSTEM DATA ]
+              </span>
+              <div className="space-y-8">
+                {metrics.map((metric) => (
+                  <div key={metric.value} className="border-b border-slate-100 pb-5 last:border-b-0">
+                    <p className="text-3xl font-bold tracking-tight text-[#063f39]">
+                      {metric.value}
+                    </p>
+                    <p className="mt-1.5 text-xs uppercase tracking-wider text-slate-500 font-medium">
+                      {metric.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values Section */}
-      {/* <section className="py-16 px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center font-instSansB">
-            Our Core Values
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Excellence",
-                description:
-                  "We are dedicated to providing the highest quality content for your success.",
-              },
-              {
-                title: "Innovation",
-                description:
-                  "We strive to make learning accessible and engaging through innovative methods.",
-              },
-              {
-                title: "Commitment",
-                description:
-                  "Our mission is to ensure students achieve their academic dreams.",
-              },
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 border border-b-4 rounded-b-md border-teal-900  p-6 text-center"
-              >
-                <h3 className="text-xl font-bold text-teal-900 mb-4 font-instSansB">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600">{value.description}</p>
-              </div>
-            ))}
+      {/* Manifesto Section */}
+      <section className="bg-[#f8faf9] px-5 py-16 sm:px-8 sm:py-24 border-t border-b border-emerald-100/50">
+        <div className="mx-auto max-w-5xl text-center">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold block mb-6">
+            [ THE JEENEETPULSE PEDAGOGY ]
+          </span>
+          <p className="text-xl sm:text-[1.85rem] font-medium leading-relaxed sm:leading-[1.6] text-[#063f39] italic font-interi">
+            “Preparation is a marathon, not a sprint. We believe in steady, structured, concept-first practice—free from the clutter of infinite notifications, vanity metrics, and high-pressure dashboards.”
+          </p>
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-600" />
+            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-600">
+              Shiv Narayan Vishnoi, Academic Director
+            </span>
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* Features  */}
-      <section className="py-6 md:py-16 bg-gray-100 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex  mb-8 gap-3 md:gap-6">
-            <div className="flex-1 h-[1px] bg-green-900 rounded-full mt-4"></div>
-            <h2 className="text-3xl font-bold text-gray-800  font-instSansB">
-              What We Offer
+      {/* Core Tenets (Thin Column Layout) */}
+      <section className="px-5 py-16 sm:px-8 sm:py-24 bg-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-700 font-bold">
+              [ CORE SYSTEM ]
+            </span>
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl font-jakarta">
+              Built around your preparation rhythm.
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3  md:gap-16">
-            {[
-              {
-                image: "/personalized-practice.svg", // Replace with your image path
-                title: "Personalized Practice",
-                description:
-                  "Enhance your learning with our AI-driven personalized practice sessions. Our unique algorithm identifies your weak concepts and curates question sets tailored to your needs. With each session, you get dynamically adjusted questions, ensuring continuous improvement. Track your progress with detailed analytics and master concepts efficiently.",
-              }
-,              
-              {
-                image: "/classes.svg",
-                title: "Expert-Led Classes",
-                description:
-                  "Learn from the best instructors in the field through interactive, on-demand classes. Our videos cover concepts in-depth, making even the most challenging topics easy to grasp. Stay engaged with clear explanations, real-life examples, and tips for exam success. Whether you're studying at your own pace or following a structured plan, our classes are built to support you.",
-              },
-              {
-                image: "/progress.svg",
-                title: "Progress Tracking",
-                description:
-                  "Monitor your academic journey with our comprehensive progress tracking tools. Get detailed insights into your strengths and areas needing improvement. Visualize your growth with performance graphs and compare yourself to peers. Regular feedback and adaptive recommendations ensure that you stay on the path to success.",
-              },
-            ].map((feature, index) => (
-              <div key={index} className=" py-6 text-justify font-instSansN">
-                <h3 className="text-xl font-bold text-teal-900 mb-4 font-instSansB">
-                  {feature.title}
+          <div className="mt-16 grid gap-12 lg:grid-cols-3 lg:gap-0 divide-y lg:divide-y-0 lg:divide-x divide-slate-200/80">
+            {tenets.map((tenet) => (
+              <div key={tenet.num} className="pt-8 lg:pt-0 lg:px-10 first:pl-0 last:pr-0">
+                <span className="font-mono text-6xl font-light text-emerald-200/60 select-none block leading-none">
+                  {tenet.num}
+                </span>
+                <h3 className="mt-6 text-xl font-bold tracking-tight text-slate-950 font-jakarta">
+                  {tenet.title}
                 </h3>
-                <p className="text-gray-900">{feature.description}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {tenet.description}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {tenet.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2.5 text-xs text-slate-700">
+                      <span className="text-emerald-600 mt-0.5">•</span>
+                      <span>{pt}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How it Works */}
-      <section className="pb-6 md:py-16 bg-gray-100 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex mb-8 gap-2 md:gap-6">
-            <h2 className="text-3xl font-bold text-gray-800 font-instSansB">
-              How It Works
-            </h2>
-            <div className="flex-1 h-[1px] bg-green-900 rounded-full mt-4"></div>
+      {/* Leadership / Faculty Rows */}
+      <section className="px-5 py-16 sm:px-8 sm:py-24 bg-white border-t border-slate-100">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between border-b border-slate-200 pb-12">
+            <div className="max-w-xl">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-700 font-bold">
+                [ FACULTY & ENGINEERING ]
+              </span>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl font-jakarta">
+                Academic integrity meets system engineering.
+              </h2>
+            </div>
+            <p className="max-w-md text-sm leading-7 text-slate-600 lg:mb-1">
+              Our workspace is built in-house. We don't rely on third-party aggregators; we develop our video streams, testing tools, and note modules to standard.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-16">
-            {[
-              {
-                image: "/register.svg", // Replace with your image paths
-                title: "Register",
-                description:
-                  "Sign up on our platform to gain access to a world of resources. Create a personalized profile and select your target exam to get started.",
-              },
-              {
-                image: "/learn.svg",
-                title: "Learn & Practice",
-                description:
-                  "Dive into expert-led classes, practice questions, and in-depth materials. Track your progress and enhance your understanding through interactive tools.",
-              },
-              {
-                image: "/test.svg",
-                title: "Take Tests",
-                description:
-                  "Simulate real test environments with our adaptive test series. Identify your strengths and work on your weaknesses to stay ahead.",
-              },
-            ].map((step, index) => (
-              <div
-                key={index}
-                className="py-3 md:py-6 text-justify font-instSansN"
-              >
-                <h3 className="text-xl font-bold text-teal-900 mb-4 font-instSansB">
-                  {step.title}
-                </h3>
-                <p className="text-gray-900">{step.description}</p>
+
+          <div className="mt-16 space-y-12">
+            {/* Shiv Narayan Vishnoi Row */}
+            <div className="grid gap-8 lg:grid-cols-[240px_1fr] items-start border-b border-slate-100 pb-12 last:border-0 last:pb-0">
+              <div className="relative h-60 w-full sm:w-60 lg:w-full shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm">
+                <Image
+                  src="/sir.jpg"
+                  alt="Shiv Narayan Vishnoi"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-16 bg-white font-instSansB px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center fo">
-            Meet the Team
-          </h2>
-          <div className="flex sm:flex-row flex-col  justify-center items-center gap-8">
-            {[
-              {
-                image: "/sir.jpg",
-                name: "Shiv Narayan Vishnoi",
-                role: "CEO",
-              },
-
-              {
-                image: "/richie1.jpg",
-                name: "Richie James",
-                role: "Technical Lead",
-              },
-            ].map((member, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 border-b-gray-300 border w-[300px] font-inter hover:border-gray-600 transition-all duration-200 hover:shadow-md rounded-2xl p-6 text-center"
-              >
-                <div className="relative w-24 h-24 mx-auto mb-4">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    layout="fill"
-                    className="rounded-full object-cover"
-                  />
+              <div className="lg:pl-8">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold block mb-1">
+                  [ ACADEMIC DIRECTOR ]
+                </span>
+                <h3 className="text-2xl font-bold text-slate-950 font-jakarta">Shiv Narayan Vishnoi</h3>
+                <p className="mt-1 text-sm font-medium text-slate-500">Founder & Academic Lead · 20+ Years JEE/NEET Pedagogy</p>
+                <p className="mt-6 text-sm leading-8 text-slate-600 font-medium max-w-3xl italic">
+                  "Education is not about pushing students into high-stress silos; it is about clarifying concepts so that they learn to reason. JeeNeetPulse is designed to make standard-class lectures and structured practice sets accessible to every aspirant."
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4 text-xs font-mono text-slate-500">
+                  <span>Focus: Curricular Design & Pedagogy</span>
+                  <span className="hidden sm:inline">|</span>
+                  <span>Review: Core Study Material</span>
                 </div>
-                <h3 className="text-xl font-bold text-teal-900">
-                  {member.name}
-                </h3>
-                <p className="text-gray-600 font-jakarta">{member.role}</p>
               </div>
-            ))}
+            </div>
+
+            {/* Richie James Row */}
+            <div className="grid gap-8 lg:grid-cols-[240px_1fr] items-start border-b border-slate-100 pb-12 last:border-0 last:pb-0">
+              <div className="relative h-60 w-full sm:w-60 lg:w-full shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm">
+                <Image
+                  src="/richie1.jpg"
+                  alt="Richie James"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="lg:pl-8">
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold block mb-1">
+                  [ TECHNICAL LEAD ]
+                </span>
+                <h3 className="text-2xl font-bold text-slate-950 font-jakarta">Richie James</h3>
+                <p className="mt-1 text-sm font-medium text-slate-500">Product Architect & Developer · Full-Stack Systems</p>
+                <p className="mt-6 text-sm leading-8 text-slate-600 font-medium max-w-3xl italic">
+                  "A student’s digital workspace should be fast, highly responsive, and quiet. I focus on building standard-compliant testing tools, adaptive performance analyses, and seamless lecture-streaming engines that minimize distraction."
+                </p>
+                <div className="mt-6 flex flex-wrap gap-4 text-xs font-mono text-slate-500">
+                  <span>Focus: Low-Latency Streaming & Testing Engines</span>
+                  <span className="hidden sm:inline">|</span>
+                  <span>Design: Clutter-free UX Systems</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-teal-900 text-white text-center">
-        <h2 className="text-3xl font-bold mb-4 font-instSansB">
-          Join Jeeneetpulse Today!
-        </h2>
-        <p className="mb-8">
-          Transform your preparation journey with expert guidance and tools.
-        </p>
-        <Link href={`/`}>
-          <button className="py-2 px-4  bg-white text-black font-bold rounded-lg shadow-md ">
-            Get Started
-          </button>
-        </Link>
+      {/* Bespoke Bottom CTA */}
+      <section className="px-5 py-20 sm:px-8 sm:py-28 bg-[#063f39] text-white border-t border-emerald-950/20">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-300">
+                [ CURRICULUM ACCESS ]
+              </span>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl font-jakarta">
+                Ready to build your preparation rhythm?
+              </h2>
+              <p className="mt-4 max-w-md text-sm leading-7 text-emerald-100/75">
+                Join our students today and experience a quiet, concept-first dashboard engineered to support consistent daily progress.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row lg:justify-end gap-5">
+              <Link
+                href="/signup"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-orange-500 px-8 py-4 text-sm font-semibold text-white transition hover:bg-orange-600 shadow-lg shadow-orange-500/10"
+              >
+                Create free account
+              </Link>
+              <Link
+                href="/courses"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white transition hover:bg-white/15"
+              >
+                Browse catalog
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
-    </div>
-  );
-};
 
-export default AboutPage;
+      <Footer />
+    </main>
+  );
+}
