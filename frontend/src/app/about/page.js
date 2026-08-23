@@ -192,8 +192,8 @@ export default function AboutPage() {
             <div className="grid gap-8 lg:grid-cols-[240px_1fr] items-start border-b border-slate-100 pb-12 last:border-0 last:pb-0">
               <div className="relative h-60 w-full sm:w-60 lg:w-full shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 shadow-sm">
                 <Image
-                  src="/richie1.jpg"
-                  alt="Richie James"
+                  src="/jose.jpg"
+                  alt="Jose C S"
                   fill
                   className="object-cover"
                 />
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-emerald-700 font-bold block mb-1">
                   [ TECHNICAL LEAD ]
                 </span>
-                <h3 className="text-2xl font-bold text-slate-950 font-jakarta">Richie James</h3>
+                <h3 className="text-2xl font-bold text-slate-950 font-jakarta">Jose C S</h3>
                 <p className="mt-1 text-sm font-medium text-slate-500">Product Architect & Developer · Full-Stack Systems</p>
                 <p className="mt-6 text-sm leading-8 text-slate-600 font-medium max-w-3xl italic">
                   "A student’s digital workspace should be fast, highly responsive, and quiet. I focus on building standard-compliant testing tools, adaptive performance analyses, and seamless lecture-streaming engines that minimize distraction."
